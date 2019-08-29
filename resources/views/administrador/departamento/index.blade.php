@@ -23,7 +23,7 @@
 
                             <td>
                                 <a href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="" ><i class="fa fa-trash" aria-hidden="true" style="color:red"></i></a>
+                                <a href=""><i class="fa fa-trash" aria-hidden="true" style="color:red"></i></a>
                             </td>
                         </tr>
                         @include('administrador.departamento.modal')

@@ -24,7 +24,9 @@ class DepartamentoFormRequest extends FormRequest
     public function rules()
     {
         return [
-
+            'Nombre'=>'required',
+            'Descripcion'=>'required',
+            'Identificacion'=>'required'
         ];
     }
 }
