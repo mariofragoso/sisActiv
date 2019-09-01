@@ -33,7 +33,7 @@ class EmpresaFromRequest extends FormRequest
             'C_P'=>'max:256',
             'Municipio'=>'max:256',
             'Correo'=>'max:256',
-            'Contacto'=>'max:256',
+            'Numero'=>'required',
             'Pagina_web'=>'max:256',
             'Identificacion	'=>'max:256'
 

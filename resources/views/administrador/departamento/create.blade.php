@@ -14,7 +14,7 @@
             @endif
         </div>
     </div>
-    {!!Form::open(array('url'=>'administrador/departamento/','method'=>'POST','autocomplete'=>'off','files'=>'true'))!!}
+    {!!Form::open(array('url'=>'administrador/departamento/'.$empresa->idempresa.'','method'=>'POST','autocomplete'=>'off'))!!}
     {{Form::token()}}
     <div class="row">
         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
@@ -45,7 +45,7 @@
 
         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
             <div class="form-group">
-              <a href="{{url('administrador/departamento/store', array('id'=>$empresa->idempresa))}});)}}"><button class="btn btn-primary" type="submit">Guardar </button></a>
+                <button class="btn btn-primary" type="submit">Guardar</button>
                 <button class="btn btn-danger" type="reset">Cancelar</button>
             </div>
         </div>

@@ -40,12 +40,12 @@ class DepartamentoController extends Controller
         return view('administrador.departamento.create',['empresa'=>$empresa]);
     }
     public function store($id,DepartamentoFormRequest $request){
-        /*$departamentos = new Departamento();
+        $departamentos = new Departamento();
         $departamentos->Nombre=$request->get('Nombre');
         $departamentos->Descripcion=$request->get('Descripcion');
         $departamentos->Identificacion=$request->get('Identificacion');
         $departamentos->idempresa=$request->get('idempresa');
-        $departamentos->save();*/
+        $departamentos->save();
         return Redirect::to('administrador/departamento/'.$id);
 
     }

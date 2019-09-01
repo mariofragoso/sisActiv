@@ -34,12 +34,12 @@ class EmpresaController extends Controller
             DB::beginTransaction();
             $datos = new Datos();
             $datos->Dirección=$request->get('Dirección');
+            $datos->Telefono=$request->get('Numero');
             $datos->Telefono=$request->get('Telefono');
             $datos->Telefono2=$request->get('Telefono2');
             $datos->C_P=$request->get('C_P');
             $datos->Municipio=$request->get('Municipio');
             $datos->Correo=$request->get('Correo');
-            $datos->Contacto=$request->get('Contacto');
             $datos->Pagina_web=$request->get('Pagina_web');
             $datos->save();
 
@@ -58,7 +58,7 @@ class EmpresaController extends Controller
 
             $empresa->save();
 
-            DB::commit();
+         DB::commit();
 
         }catch(\Exception $e){
             DB::rollback();
