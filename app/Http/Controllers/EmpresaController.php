@@ -8,6 +8,7 @@ use sisActiv\Datos;
 use sisActiv\Http\Requests;
 use sisActiv\Empresa;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
 use sisActiv\Http\Requests\EmpresaFromRequest;
 use DB;
 
@@ -46,8 +47,14 @@ class EmpresaController extends Controller
             $empresa->iddatos = $datos->iddatos;
             $empresa->Nombre=$request->get('Nombre');
             $empresa->Sucursal=$request->get('Sucursal');
-            $empresa->Imagen=$request->get('Imagen');
+            //$empresa->Imagen=$request->get('Imagen');
+            if (Input::hasFile('Imagen')){
+                $file=Input::file('Imagen');
+                $file->move(public_path().'/imagenes/empresas',$file->getClientOriginalName());
+                $empresa->Imagen=$file->getClientOriginalName();
+            }
             $empresa->Identificacion=$request->get('Identificacion');
+
 
             $empresa->save();
 
@@ -55,7 +62,7 @@ class EmpresaController extends Controller
 
         }catch(\Exception $e){
             DB::rollback();
-            return Redirect::to('administrador/departamento');
+            //return Redirect::to('administrador/departamento');
         }
         return Redirect::to('principal/empresas');
     }

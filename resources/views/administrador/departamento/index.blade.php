@@ -3,7 +3,8 @@
 
     <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-            <h3>Listado de Departamentos <a href=""><button class="btn btn-success">Nuevo</button></a></h3>
+            <h3>Listado de Departamentos <a href="{{$id}}/create"><button class="btn btn-success">Nuevo</button></a></h3>
+
         </div>
     </div>
     </div>
@@ -14,19 +15,21 @@
                     <thead>
                     <th>Nombre</th>
                     <th>Descripcion</th>
+                    <th>Identificacion</th>
                     <th>Opciones</th>
                     </thead>
                     @foreach($departamentos as $dep)
                         <tr>
                             <td>{{$dep->Nombre}}</td>
                             <td>{{$dep->Descripcion}}</td>
+                            <td>{{$dep->Identificacion}}</td>
 
                             <td>
                                 <a href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href=""><i class="fa fa-trash" aria-hidden="true" style="color:red"></i></a>
-                            </td>
+                               <!-- <a href="" data-target="#modal-delete-{{$dep->iddepartamento}}" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true" style="color:red"></i></a>
+                           --> </td>
                         </tr>
-                        @include('administrador.departamento.modal')
+                      <!--  -->
                     @endforeach
                 </table>
             </div>

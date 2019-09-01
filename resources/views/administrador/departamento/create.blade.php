@@ -14,28 +14,38 @@
             @endif
         </div>
     </div>
-    {!!Form::open(array('url'=>'administrador/departamento','method'=>'POST','autocomplete'=>'off','files'=>'true'))!!}
+    {!!Form::open(array('url'=>'administrador/departamento/','method'=>'POST','autocomplete'=>'off','files'=>'true'))!!}
     {{Form::token()}}
     <div class="row">
         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
             <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" required id="" value="{{old('Nombre')}}" class="form-control" placeholder="Nombre ...">
+                <label for="Nombre">Nombre</label>
+                <input type="text" name="Nombre" required id="" value="{{old('Nombre')}}" class="form-control" placeholder="Nombre ...">
             </div>
         </div>
         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
             <div class="form-group">
-                <label for="descripcion">Descripcion</label>
-                <select name="iddepartamento" id="" class="form-control">
-                    @foreach($departamento as $cat)
-                        <option value="{{$dep->iddepartamento}}">{{$dep->Nombre}}</option>
-                    @endforeach
-                </select>
+                <label for="Descripcion">Descripcion</label>
+                <input type="text" name="Descripcion" required id="" value="{{old('Descripcion')}}" class="form-control" placeholder="Descripcion ...">
             </div>
         </div>
         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
             <div class="form-group">
-                <button class="btn btn-primary" type="submit">Guardar </button>
+                <label for="Identificacion">Identificacion</label>
+                <input type="text" name="Identificacion" required id="" value="{{old('Identificacion')}}" class="form-control" placeholder="Identificacion ...">
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+            <div class="form-group">
+                <label for="Empresa">Empresa</label>
+                <p> {{$empresa->Nombre}} {{$empresa->Sucursal}}</p>
+                <input type="hidden" name="idempresa" required id="" value="{{$empresa->idempresa}}" class="form-control" placeholder="Identificacion ...">
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+            <div class="form-group">
+              <a href="{{url('administrador/departamento/store', array('id'=>$empresa->idempresa))}});)}}"><button class="btn btn-primary" type="submit">Guardar </button></a>
                 <button class="btn btn-danger" type="reset">Cancelar</button>
             </div>
         </div>
@@ -43,3 +53,4 @@
     {!!Form::close()!!}
 
 @endsection
+

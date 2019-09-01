@@ -1,4 +1,4 @@
-@extends ('layout.admin')
+@extends ('layout.admin2')
 @section( ('contenido'))
     <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -22,10 +22,13 @@
                         <tr>
                             <td>{{$emp->Nombre}}</td>
                             <td>{{$emp->Sucursal}}</td>
-                            <td>{{$emp->Imagen}}</td>
+                            <td>
+                             <img src="{{asset('imagenes/empresas/'.$emp->Imagen)}}" alt="{{$emp->Nombre}}" height="100px" width="100px" class="img-thumbnail">
+                            </td>
                             <td>
                                 <a href=""><i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="" data-target="#modal-delete-{{$emp->idempresa}}" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true" style="color:red"></i></a>
+                                <a href="{{url('administrador/departamento', array('id'=>$emp->idempresa))}}" ><i class="fa fa-eye" aria-hidden="true" style="color:black"></i></a>
                             </td>
                         </tr>
                     @include('principal.empresas.modal')

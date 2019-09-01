@@ -26,7 +26,7 @@ class EmpresaFromRequest extends FormRequest
         return [
             'Nombre'=>'required',
             'Sucursal'=>'required',
-            'Imagen'=>'required',
+            'Imagen'=>'mimes:jpeg,bmp,png',
             'Dirección'=>'max:256',
             'Telefono'=>'max:256',
             'Telefono2'=>'max:256',

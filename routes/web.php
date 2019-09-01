@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('administrador/departamento','DepartamentoController');
+//Route::resource('administrador/departamento','DepartamentoController');
 Route::resource('administrador/personal','PersonalController');
 Route::resource('administrador/usuarios','UsuariosController');
 Route::resource('almacen/consumible','ConsumibleController');
@@ -27,6 +27,9 @@ Route::resource('configurar/asignacion','AsignacionController');
 Route::resource('configurar/backup','BackupController');
 Route::resource('configurar/bitacoraacciones','BitacoraaccionesController');
 Route::resource('principal/empresas','EmpresaController');
+Route::resource('administrador/departamento/{id}','DepartamentoController');
+
+
 
 
 

@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.admin2')
 @section('contenido')
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -84,7 +84,7 @@
         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
             <div class="form-group">
                 <label for="Imagen">Imagen</label>
-                <input type="text" name="Imagen" required id="" value="{{old('Imagen')}}" class="form-control" placeholder="Imagen ...">
+                <input type="file" name="Imagen" required id=""  class="form-control">
             </div>
         </div>
         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">

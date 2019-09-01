@@ -26,7 +26,8 @@ class DepartamentoFormRequest extends FormRequest
         return [
             'Nombre'=>'required',
             'Descripcion'=>'required',
-            'Identificacion'=>'required'
+            'Identificacion'=>'required',
+            'idempresa'=>'required'
         ];
     }
 }
